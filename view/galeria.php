@@ -2,18 +2,15 @@
 	session_start();
     if(!strcmp($_SESSION['nivel'],"1")){
       include 'menu_adm.php';
-      include '../model/dao/FotoDAO.php';
-      include '../model/dao/PublicacaoDAO.php';      
-      include '../model/dao/CurtirDAO.php';
-      include '../model/dao/Conexao.php';
+
     }else{
       include 'menu_usuario.php';
-      include '../model/dao/FotoDAO.php';
-      include '../model/dao/PublicacaoDAO.php';
-      include '../model/dao/CurtirDAO.php';
-      include '../model/dao/Conexao.php';
     }
-
+    
+    include '../model/dao/FotoDAO.php';
+    include '../model/dao/PublicacaoDAO.php';      
+    include '../model/dao/CurtirDAO.php';
+    include '../model/dao/Conexao.php';
     $nome = $_SESSION['nome'];
 ?>
   <br><br><br><br><br><br><br><br>
