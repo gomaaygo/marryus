@@ -74,6 +74,7 @@
                 $curtidas = new CurtirDAO();
 
                 $result = $publicacaodao -> listar_PorData($conec);
+                $id_user = $_SESSION['id_usuario'];
 
                 while($row = $result->fetch(PDO::FETCH_OBJ)) { 
                   $result2 = $curtidas -> listar_PorCurtidaseData($conec, $row->id_publicacao);
@@ -82,7 +83,7 @@
                         <a  href='../model/dao/ListarPublicacao.php?id_f=$row->foto_id_foto'>
                           <img style='width:1080px; heigth:300px' src='../model/dao/ListarPublicacao.php?id_f=$row->foto_id_foto' alt='img'>
                         </a>
-                        <a href='../controller/curtir.php'><i class='material-icons'>favorite_border</i></a>
+                        <a href='../controller/curtir.php?id_u=$id_user&id_f=$row->foto_id_foto'><i class='material-icons'>favorite_border</i></a>
                         <h4>Curtidas: $n_curtidas->quant_curtidas</h4>
                         <h4>Data de Publicação: $row->data</h4>
                   </div>";
