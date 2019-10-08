@@ -1,6 +1,6 @@
 <?php 
 	include '../model/dao/UsuarioDAO.php';
-	include '../model/dao/conexao.php';
+	include '../model/dao/Conexao.php';
 
 	session_start();
 
